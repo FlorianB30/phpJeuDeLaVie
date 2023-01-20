@@ -15,25 +15,13 @@ function play($tab) {
         for($i = 0; $i < count($tab); ++$i) {
                 switch($i) {
                         case 0:
-                                if(($tab[count($tab)-1] == "o" && $tab[$i+1] == "x") || ($tab[count($tab)-1] == "x" && $tab[$i+1] == "o")) {
-                                        array_push($tabChain,"o");
-                                } else {
-                                        array_push($tabChain,"x");
-                                }
+                                array_push($tabChain,($tab[count($tab)-1] == "o" && $tab[$i+1] == "x") || ($tab[count($tab)-1] == "x" && $tab[$i+1] == "o")? "o": "x");
                         break;
                         case count($tab)-1:
-                                if(($tab[$i-1] == "o" && $tab[0] == "x") || ($tab[$i-1] == "x" && $tab[0] == "o")) {
-                                        array_push($tabChain,"o");
-                                } else {
-                                        array_push($tabChain,"x");
-                                }
+                                array_push($tabChain,($tab[$i-1] == "o" && $tab[0] == "x") || ($tab[$i-1] == "x" && $tab[0] == "o")? "o":"x");
                         break;
                         default:
-                                if(($tab[$i-1] == "o" && $tab[$i+1] == "x") || ($tab[$i-1] == "x" && $tab[$i+1] == "o")) {
-                                        array_push($tabChain,"o");
-                                } else {
-                                        array_push($tabChain,"x");
-                                }
+                                array_push($tabChain,($tab[$i-1] == "o" && $tab[$i+1] == "x") || ($tab[$i-1] == "x" && $tab[$i+1] == "o")? "o":"x");
                         break;
                 }
         }
